@@ -1,3 +1,66 @@
 .wrapper {
   margin: 110px 243px;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header > * {
+  flex: 1 100%;
+}
+
+.page-title {
+  font-family: 'PT Serif';
+  font-weight: 700;
+}
+
+.about {
+  width: 439px;
+
+  font-family: 'Poppins';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #000;
+}
+
+.about > h4.title {
+  text-transform: uppercase;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);;
+}
+
+.card-photo {
+  width: 238px;
+  margin: 0;
+}
+
+.card-photo > img {
+  width: 100%;
+}
+
+.team-card {
+  position: relative;
+}
+
+.team-card .card-role {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+
+  font-family: 'PT Serif';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  color: #000;
+}
