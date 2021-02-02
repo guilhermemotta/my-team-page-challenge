@@ -1,3 +1,5 @@
+* { margin: 0; }
+
 .wrapper {
   margin: 110px 243px;
 }
@@ -33,7 +35,7 @@ header > * {
 
 .content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card-photo {
@@ -47,6 +49,15 @@ header > * {
 
 .team-card {
   position: relative;
+}
+
+.team-card .card-name {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #000;
 }
 
 .team-card .card-role {
@@ -63,4 +74,34 @@ header > * {
   text-transform: uppercase;
 
   color: #000;
+}
+
+@media all and (max-width: 599px) {
+  .wrapper { margin: 71px 12px; }
+  .wrapper header { flex-flow: column wrap; }
+  .about {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .content {
+    justify-content: center;;
+    grid-template-columns: repeat(2, 1fr); }
+  .team-card:nth-child(2n) { margin-top: 50px; }
+  .card-photo { width: 140px; }
+  .team-card .card-name {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .team-card .card-role {
+    right: -50px;
+
+    font-size: 10px;
+    line-height: 13px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .team-card:nth-child(3n + 2) {
+    margin-top: 50px;
+  }  
 }
