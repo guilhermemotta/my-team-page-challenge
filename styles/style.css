@@ -2,11 +2,13 @@
 
 .wrapper {
   margin: 110px 243px;
+  margin-bottom: 20px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 95px;
 }
 
 header > * {
@@ -36,10 +38,23 @@ header > * {
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 430px);
+}
+
+.team-card {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "card-photo card-role"
+    "card-name  card-name";
+  grid-template-columns: 238px 30px;
+  grid-template-rows: 341px 30px;
 }
 
 .card-photo {
+  grid-area: card-photo;
   width: 238px;
+  height: 100%;
   margin: 0;
 }
 
@@ -47,23 +62,27 @@ header > * {
   width: 100%;
 }
 
-.team-card {
-  position: relative;
-}
-
 .team-card .card-name {
+  grid-area: card-name;
+  height: 30px;
+
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
-
   color: #000;
+
+  margin-top: 15px;
 }
 
 .team-card .card-role {
-  position: absolute;
-  top: 0;
-  right: -30px;
+  grid-area: card-role;
+  
+}
+
+.card-role > p {
+  margin-left: 30px;
+  width: 105px;
   transform-origin: 0 0;
   transform: rotate(90deg);
 
@@ -76,6 +95,21 @@ header > * {
   color: #000;
 }
 
+footer {
+  margin-top: 110px;
+
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #A9A9A9;
+}
+
+
 @media all and (max-width: 599px) {
   .wrapper { margin: 71px 12px; }
   .wrapper header { flex-flow: column wrap; }
@@ -84,8 +118,9 @@ header > * {
     line-height: 21px;
   }
   .content {
-    justify-content: center;;
-    grid-template-columns: repeat(2, 1fr); }
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .team-card:nth-child(2n) { margin-top: 50px; }
   .card-photo { width: 140px; }
   .team-card .card-name {
@@ -94,13 +129,22 @@ header > * {
   }
   .team-card .card-role {
     right: -50px;
-
+    
     font-size: 10px;
     line-height: 13px;
   }
 }
 
-@media all and (min-width: 600px) {
+@media (max-width: 800px), handheld and (orientation: landscape) {
+  .wrapper { margin: 71px 10vw; }
+  .content {
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team-card:nth-child(2n) { margin-top: 50px; }
+}
+
+@media all and (min-width: 900px) {
   .team-card:nth-child(3n + 2) {
     margin-top: 50px;
   }  
