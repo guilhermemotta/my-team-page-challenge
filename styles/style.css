@@ -21,7 +21,7 @@ header > * {
 }
 
 .about {
-  width: 439px;
+  max-width: 439px;
 
   font-family: 'Poppins';
   font-weight: normal;
@@ -113,33 +113,46 @@ footer {
 @media all and (max-width: 599px) {
   .wrapper { margin: 71px 12px; }
   .wrapper header { flex-flow: column wrap; }
+  header { margin-bottom: 50px; }
+  .page-title { margin-bottom: 40px; }
   .about {
     font-size: 14px;
     line-height: 21px;
+    width: 100%;
   }
   .content {
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 230px);
+  }
+  .team-card {
+    grid-template-columns: 140px 20px;
+    grid-template-rows: 200px 20px;
   }
   .team-card:nth-child(2n) { margin-top: 50px; }
-  .card-photo { width: 140px; }
+  .card-photo { width: 140px; height: 200px; }
   .team-card .card-name {
     font-size: 14px;
     line-height: 21px;
+    margin-top: 5px;
   }
   .team-card .card-role {
-    right: -50px;
+    /*right: -50px;*/
     
     font-size: 10px;
     line-height: 13px;
   }
+  .card-role > p {
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 800px), handheld and (orientation: landscape) {
-  .wrapper { margin: 71px 10vw; }
+  /*.wrapper { margin: 71px 10vw; }*/
   .content {
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
   .team-card:nth-child(2n) { margin-top: 50px; }
 }
