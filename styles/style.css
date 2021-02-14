@@ -5,17 +5,17 @@
   margin-bottom: 20px;
 }
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 95px;
 }
 
-header > * {
+.header > * {
   flex: 1 100%;
 }
 
-.page-title {
+.header__title {
   font-family: 'PT Serif';
   font-weight: 700;
 }
@@ -31,7 +31,7 @@ header > * {
   color: #000;
 }
 
-.about > h4.title {
+.about__title {
   text-transform: uppercase;
 }
 
@@ -51,18 +51,18 @@ header > * {
   grid-template-rows: 341px 30px;
 }
 
-.card-photo {
+.team-card__photo {
   grid-area: card-photo;
   width: 238px;
   height: 100%;
   margin: 0;
 }
 
-.card-photo > img {
+.team-card__photo > img {
   width: 100%;
 }
 
-.team-card .card-name {
+.team-card__name {
   grid-area: card-name;
   height: 30px;
 
@@ -75,12 +75,12 @@ header > * {
   margin-top: 15px;
 }
 
-.team-card .card-role {
+.team-card__role {
   grid-area: card-role;
   
 }
 
-.card-role > p {
+.team-card__role > p {
   margin-left: 30px;
   width: 105px;
   transform-origin: 0 0;
@@ -95,7 +95,7 @@ header > * {
   color: #000;
 }
 
-footer {
+.footer {
   margin-top: 110px;
 
   display: flex;
@@ -109,12 +109,17 @@ footer {
   color: #A9A9A9;
 }
 
+/**
+ * MEDIA QUERIES
+ */
 
 @media all and (max-width: 599px) {
   .wrapper { margin: 71px 12px; }
-  .wrapper header { flex-flow: column wrap; }
-  header { margin-bottom: 50px; }
-  .page-title { margin-bottom: 40px; }
+  .header {
+    flex-flow: column wrap;
+    margin-bottom: 50px;
+  }
+  .header__title { margin-bottom: 40px; }
   .about {
     font-size: 14px;
     line-height: 21px;
@@ -130,25 +135,23 @@ footer {
     grid-template-rows: 200px 20px;
   }
   .team-card:nth-child(2n) { margin-top: 50px; }
-  .card-photo { width: 140px; height: 200px; }
-  .team-card .card-name {
+  .team-card__photo { width: 140px; height: 200px; }
+  .team-card__name {
     font-size: 14px;
     line-height: 21px;
     margin-top: 5px;
   }
-  .team-card .card-role {
-    /*right: -50px;*/
-    
+  .team-card__role {
     font-size: 10px;
     line-height: 13px;
   }
-  .card-role > p {
+  .team-card__role > p {
     margin-left: 20px;
   }
 }
 
 @media (max-width: 800px), handheld and (orientation: landscape) {
-  /*.wrapper { margin: 71px 10vw; }*/
+  .wrapper { margin: 71px 10vw; }
   .content {
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
